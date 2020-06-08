@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+ 
+    <h1>Dashboard</h1>
+    <br>
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>Dashboard</h2>
+                <h2>Saved Articles</h2>
+                <p>Select how you wanna proceed.</p>
+                <br>
+                <form action="{{ url_for('fulldashboard') }}" method="post">
+                    <button class="btn btn-primary">Your Articles</button>
+                </form>
+                <br>
+                <form action="{{ url_for('find') }}" method="post">
+                    <button class="btn btn-primary">Search Engine</button>
+                </form>
+                <br>
+                <form action="{{ url_for('selection') }}" method="post">
+                    <button class="btn btn-primary">Analyze</button>
+                </form>
+                <br>
+                <form action="/" method="post">
+                    <button class="btn btn-primary">Logout</button>
+                </form>
+            </div>
+
+        </div>
+
+<div class="main">
+
+    <!-- Code for showing PDFs -->
+
+</div>
+        
+
+
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
+

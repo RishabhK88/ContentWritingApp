@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordCloud</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wcloud.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="main-text">
+                <h2>Results</h2>
+                {document_name} <br><br>
+                <p>
+                    <a href="wcloud.html">Cloud</a>
+                    <br>
+                    <a href="summary.html">Summary</a>
+                    <br>
+                    <a href="qna.html">QnA</a>
+                </p>
+                
+                <br>
+                <form action="/">
+                    <button class="btn btn-primary">Back</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="container-fluid">
+
+                <!-- <br><br> -->
+                <!-- cloud! -->
+                <div class="head-text">
+                    <h2>Word Cloud</h2>
+                </div>
+                <br>
+                <div class="card">
+                <img src={{ url }} alt="Chart" height="500" width="550">
+                </div>    
+                <!-- <br><br> -->
+
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+</body>
+
+</html>

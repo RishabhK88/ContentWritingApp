@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/editor.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+
+</head>
+
+
+<body>
+
+        <div class="container">
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>Type Away...</h2>
+                <p>Select how you wanna proceed.</p>
+                <br>
+                <form action="{{ url_for('ques_ans') }}" method="post">
+                    <button class="btn btn-primary">Summarize</button>
+                </form>
+                <br>
+                <form action="{{ url_for('wcloud') }}" method="post">
+                    <button class="btn btn-primary">Keyword Extraction</button>
+                </form>
+                <br>
+                <form action="{{ url_for('ques_ans') }}" method="post">
+                    <button class="btn btn-primary">Q&A</button>
+                </form>
+                <br>
+                <form action="/" method="post">
+                    <button class="btn btn-primary">Back</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="main">
+             <form action="/editor" method="POST">
+        <div class="form-group">
+          <label for="title">Article Title</label>
+          <input type="text" class="form-control" id="title" name="title" value={{ Title }}>
+          </div>
+        <br />
+        <label for="editor">Article Content</label>
+        <textarea name="content" id="editor">{{ Content }}</textarea>
+        <br />
+        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+        </div>
+        
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/editor.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+
+</head>
+
+
+<body>
+
+    <h1>Type Away...</h1>
+    <br />
+    <br />
+    <br />
+    <form action="/editor" method="POST">
+        <div class="form-group">
+          <label for="title">Article Title</label>
+          <input type="text" class="form-control" id="title" name="title" value={{ Title }}>
+          </div>
+        <br />
+        <label for="editor">Article Content</label>
+        <textarea name="content" id="editor">{{ Content }}</textarea>
+        <br />
+        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
+
+ -->

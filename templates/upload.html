@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/upload.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>Upload</h2>
+            <p>Upload pdf here.</p>
+            <!-- <ul> -->
+                <!-- <li>Research Papers</li> -->
+                <!-- <li>General</li> -->
+            <!-- </ul> -->
+            Research Papers
+            <br>
+            General
+            <br><br>
+            <form action="/">
+                <button class="btn btn-primary">Back</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <div class="main">
+        <!-- <div class="col-md-6 col-sm-16"> -->
+            <div class="upload-form">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Pdf Upload</h5>
+                    </div>
+                    <div class="card-block">
+                        <form action="{{ url_for('uploader') }}" method="post" enctype="multipart/form-data">
+                        
+                            <!-- <div class="dropzone dz-clickable">
+                                <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                            </div>
+                            <br> -->
+                            <div class="form-group">
+                                
+                                <input type="file" name = "file" class="form-control-file" >
+                            </div>
+                            <div class="m-t-20">
+                                <button class="btn btn-primary" type="submit">Upload Now</button>
+                            </div>
+                        </form>
+                        
+                        <br>
+                        <br>
+                        {{ warning }}
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</div>
+</body>
+
+</html>

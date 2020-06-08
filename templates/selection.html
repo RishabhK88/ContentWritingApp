@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/selection.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>Selection</h2>
+                <p>Select how you wanna proceed.</p>
+                <br>
+                <form action="/">
+                    <button class="btn btn-primary">Back</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="main">
+            <div class="upload-form">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Find Papers</h2>
+                        <p>We provide service to find papers!</p>
+                    </div>
+                    <div class="card-block">
+                        <form action="/find" method="post">
+                            <button class="btn btn-primary" name="forwardBtn" type="submit">Search Engine</button>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Upload PDF</h2>
+                        <p>You can Upload predownloaded papers</p>
+                    </div>
+                    <div class="card-block">
+                        <form action="/upload/" method="post">
+                            <button class="btn btn-primary" type="submit" name="bckbtn">Upload PDF</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+</body>
+
+</html>

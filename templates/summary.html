@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/summary.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="main-text">
+                <h2>Results</h2>
+                {document_name} <br><br>
+                <p>
+                    <a href="wcloud.html">Cloud</a>
+                    <br>
+                    <a href="summary.html">Summary</a>
+                    <br>
+                    <a href="qna.html">QnA</a>
+                </p>
+                
+                <br>
+                <form action="/">
+                    <button class="btn btn-primary">Back</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="container-fluid">
+
+                <!-- <br><br> -->
+                <!-- summary -->
+                <div class="head-text">
+                    <h2>Summarization</h2>
+                </div>
+                <br>
+
+                <!-- scrollable pages -->
+                <div class="cover-container">
+                            <div class="cover-item">
+                                <h5>Page 1</h5>
+                                <div class="card">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias possimus aliquid
+                                pariatur reprehenderit expedita commodi totam nobis nostrum mollitia, similique et
+                                repellendus quibusdam, quaerat adipisci quos eveniet omnis quam iusto. Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Sapiente voluptates pariatur deleniti numquam a
+                                doloribus sunt necessitatibus sit, molestias rerum magnam adipisci nobis facere
+                                asperiores deserunt quis culpa impedit ex!.
+                                </div>
+                            </div>
+                </div>
+
+                <!-- <br><br> -->
+                
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+</body>
+
+</html>

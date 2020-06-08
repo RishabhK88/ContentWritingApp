@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("td a").addClass("btn btn-mine");
+        });
+    </script>
+    <style>
+        .btn-mine {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 100%;
+            /* display: inline-block; */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="main-text">
+                <h2>Fetch Papers</h2>
+                <p>
+                    Enter key words for paper you wanna find.
+                </p>
+                <br><br>
+                <form action="/">
+                    <button class="btn btn-primary">Back</button>
+                </form>
+                <form action="/upload/" method="post">
+                    <br>
+                    <button class="btn btn-primary">Upload</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="container-fluid">
+
+                <!-- <br><br> -->
+                <div class="head-text">
+                    <h2>Enter Key-words</h2>
+                </div>
+                <form method="post" action="{{ url_for('found') }}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="ques" aria-describedby="queshelp"
+                            placeholder="Enter Keywords" name="keywords">
+                        <label for="ques">Example : Biotechnology</label>
+                        <input type="text" class="form-control" name=noofresults id="max_results"
+                            placeholder="Enter no. of results you want">
+                        <label for="max_results">Example : 5</label>
+<!--                         <input type="text" class="form-control" name=indexid id="indexid"
+                            placeholder="Enter the index of research paper you want in pdf">
+                        <label for="max_results">Example : 2</label> -->
+                        <small id="queshelp" class="form-text text-muted">You will get the papers in PDF format.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Fetch!</button>
+                </form>
+                <br>
+                <!-- answer -->
+                <div class="card">
+                    <h3> List of documents found : </h3> <br><br>
+
+                    {% for table in tables %}
+                    {{ table|safe }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+</body>
+
+</html>

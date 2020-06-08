@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+ 
+    <h1>Dashboard</h1>
+    <br>
+
+    <div class="container">
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>Dashboard</h2>
+                <h2>Your Articles</h2>
+                <p>Select how you wanna proceed.</p>
+                <br>
+                <form action="{{ url_for('pdfdashboard') }}" method="post">
+                    <button class="btn btn-primary">Saved Articles</button>
+                </form>
+                <br>
+                <form action="{{ url_for('find') }}" method="post">
+                    <button class="btn btn-primary">Search Engine</button>
+                </form>
+                <br>
+                <form action="{{ url_for('selection') }}" method="post">
+                    <button class="btn btn-primary">Analyze</button>
+                </form>
+                <br>
+                <form action="/" method="post">
+                    <button class="btn btn-primary">Logout</button>
+                </form>
+            </div>
+
+        </div>
+
+<div class="main">
+
+        {% for artic in articles %}
+        <div class="card m-2" style="width: 18rem; height: 26rem">
+        <img src="static/images/cards.jpg" class="card-img-top" alt="cards">
+        <div class="card-body">
+        <h5 class="card-title">{{ artic.Title }}</h5>
+        <p class="card-text">{{ artic.Content[3:100] }}...</p>
+        <a href="{{ url_for('post', ID=artic.ID) }}" class="btn btn-primary">Edit</a>
+        </div>
+        </div>
+    {% endfor %}
+ 
+
+</div>
+        
+
+
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
+

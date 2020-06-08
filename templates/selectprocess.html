@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/selectprocess.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>Selection</h2>
+            <p>Select how you wanna proceed.</p>
+            <br>
+            <form action="login.html">
+                <button class="btn btn-primary">Back</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <div class="main">
+            <div class="upload-form">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Word Cloud</h2>
+                        <p>Get word Cloud!</p>
+                    </div>
+                    <div class="card-block">
+                        <form action="{{ url_for('wcloud') }}" method="post">
+                            <button class="btn btn-primary">Proceed</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Summary</h2>
+                        <p>Get summary of each page!</p>
+                    </div>
+                    <div class="card-block">
+                        <form action="{{ url_for('ques_ans') }}" method="post">
+                            <button class="btn btn-primary">Proceed</button>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2>QnA</h2>
+                        <p>Ask questions from the uploaded PDF!</p>
+                    </div>
+                    <div class="card-block">
+                        <form action="upload.html">
+                            <button class="btn btn-primary">Proceed</button>
+                        </form>
+                        
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</div>
+</body>
+
+</html>
